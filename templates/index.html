@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI Calculator</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}" >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    </head>
+    <body>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <div class="outer-div">
+            <h2>BMI Calculator Flask Web-App</h2><hr/>
+            <div class="inner-form-div">
+                <form method="POST" class="pure-form" action="/">
+                    <input type="text" name="weight" class="input-field" placeholder="Enter weight (kilograms)" /><br/><br/>
+                    <input type="text" name="height" class="input-field" placeholder="Enter height (meters)" /><br/><br/>
+                    <button class="pure-button pure-button-primary" type="submit" value="submit">submit</button><br/><br/>
+                </form>
+                {% if bmi: %}
+                <p>BMI (kilograms per square meters): {{bmi}}</p><br/>
+                {% endif %}
+            </div>
+            <hr>
+        </div>
+    </body>
+</html>
