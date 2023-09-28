@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
 
-def validate_all(property, *keys: tuple[str]):
+def validate_all(property: dict, *keys: tuple[str]):
 
-    validated = [True if key in keys else False for key in keys]
+    validated = [True if key in property.keys() else False for key in keys]
     return all(validated)
 
 
